@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<table border="1">
+		<thead>
+			<tc>
+				<th>ID</th>
+			</tc>
+			<tc>
+				<th>NAME</th>
+			</tc>
+			<tc>
+				<th>EMAIL</th>
+			</tc>
+			<tc>
+				<th>WHATSAPP</th>
+			</tc>
+
+		</thead>
+		<tbody>
+			<tr th:each="a : ${msgall}">
+				<td th:text="${a.id}"></td>
+				<td th:text="${a.name}"></td>
+				<td th:text="${a.email}"></td>
+				<td th:text="${a.whatapp_num}"></td>
+
+			</tr>
+		</tbody>
+
+	</table>
+	<form action="msgsend" method="post">
+		<label for="bodymsg">mssage:</label>
+		<input type="text" id="bodymsg" name="bodymsg" placeholder="Enter your massage" required>
+		<button type="submit">MASSAGE SEND</button>
+	</form>
+</body>
+
+</html>
